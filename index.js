@@ -7,3 +7,4 @@ let obj = ['blue', 3];
 obj[0] = 4;
 obj[1] = 'red';
 console.log(obj);
+console.log('Test Commit');
