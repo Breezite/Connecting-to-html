@@ -51,7 +51,8 @@ try
 }
 catch(e)
 {
-    alert(e);
+    console.log('woops');
+    //alert(e); This line can't be read through node, only html in browser
 }
 
 console.log(Avg);
@@ -60,3 +61,38 @@ function sayHi()    //Use 'window.SayHi' and 'window.SayHi()' in tab
 {
     console.log('Hi');
 }
+
+
+function SumWithIn()
+{
+    let tots = 0;
+    for(let value in arguments)
+    {
+        tots += value;
+    }
+    return tots;
+}
+
+function Sum(...items)
+{
+    if(items.length == 1 && Array.isArray(items[0]))
+    {
+        items = [...items[0]];
+    }
+    return items.reduce((a, b) => a+b);
+}
+
+console.log(SumWithIn(1, 2, 3, 4));
+const arr = [1, 2];
+console.log(Sum(arr));
+
+const circle =
+{
+    radius: 2,
+    get area()
+    {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+console.log(circle.area);
+
